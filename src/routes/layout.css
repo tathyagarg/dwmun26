@@ -1,0 +1,34 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'TAN Aegean';
+  src: url('/assets/fonts/tan_aegean.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Gotham Medium';
+  src: url('/assets/fonts/gotham_medium.ttf') format('truetype');
+}
+
+@theme {
+  --color-custom-white: #f3f3f3;
+  --color-dark-white: #dcdbdd;
+
+  --color-dark-blue: #1c3271;
+  --color-cobalt-blue: #004aad;
+
+  --color-light-cobalt-blue: color-mix(in srgb, var(--color-cobalt-blue) 10%, var(--color-white));
+}
+
+body {
+  background-color: var(--color-white);
+  color: black;
+
+  font-family: 'Gotham Medium', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'TAN Aegean', serif;
+  font-weight: bold;
+  color: var(--color-dark-blue);
+}
