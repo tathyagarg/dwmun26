@@ -2,6 +2,7 @@
   import "./layout.css";
   import favicon from "$lib/assets/favicon.svg";
   import { onMount } from "svelte";
+  import Navbar from "$lib/components/Navbar.svelte";
 
   let { children } = $props();
 
@@ -38,4 +39,6 @@
 <svelte:head>
   <link rel="icon" href={favicon} />
 </svelte:head>
+
+<Navbar />
 {@render children()}

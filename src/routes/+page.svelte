@@ -1,44 +1,106 @@
 <script lang="ts">
-  import { createTimeline, stagger } from "animejs";
+  import { animate, onScroll, stagger } from "animejs";
   import { onMount } from "svelte";
 
   let timeLeft = $state(0);
 
   const MUN_DATE = new Date("2026-07-31T08:00:00Z").getTime();
 
-  onMount(() => {
+  onMount(async () => {
     timeLeft = Math.max(0, MUN_DATE - Date.now());
 
     setInterval(() => {
       timeLeft = Math.max(0, MUN_DATE - Date.now());
     }, 1000);
 
-    let timeline = createTimeline();
+    await animate(".core", {
+      opacity: 0,
+      translateY: 50,
+      duration: 0,
+    });
 
-    timeline
-      .add(".core", {
-        opacity: 0,
-        translateY: 50,
-        duration: 0,
-      })
-      .add(
-        ".core",
-        {
-          opacity: 1,
-          translateY: 0,
-          duration: 1000,
-          delay: stagger(200),
-          easing: "easeOutExpo",
-        },
-        "+=500",
-      );
+    animate(".absolute-core", {
+      opacity: [0, 0.35],
+      scale: [0.8, 1],
+      duration: 500,
+      easing: "easeOutExpo",
+    });
+
+    animate(".right-core", {
+      opacity: [0, 0.35],
+      translateX: [100, 0],
+      translateY: [100, 0],
+      duration: 500,
+      easing: "easeOutExpo",
+    });
+
+    animate(".left-core", {
+      opacity: [0, 0.35],
+      translateX: [-100, 0],
+      translateY: [100, 0],
+      duration: 500,
+      easing: "easeOutExpo",
+    });
+
+    await animate(".core", {
+      opacity: [0, 1],
+      translateY: [50, 0],
+      duration: 500,
+      delay: stagger(100),
+      easing: "easeOutExpo",
+    });
+
+    animate([".core", ".absolute-core"], {
+      scale: [1, 0.5],
+      opacity: 0,
+      easing: "easeInOutQuad",
+      autoplay: onScroll({
+        target: "#hero",
+        container: document.body,
+        enter: "top top",
+        leave: "top bottom-=33%",
+        sync: 0.25,
+      }),
+    });
+
+    animate(".right-core", {
+      translateX: [0, 100],
+      translateY: [0, 100],
+      opacity: 0,
+      easing: "easeInOutQuad",
+      autoplay: onScroll({
+        target: "#hero",
+        container: document.body,
+        enter: "top top",
+        leave: "top bottom-=33%",
+        sync: 0.25,
+      }),
+    });
+
+    animate(".left-core", {
+      translateX: [0, -100],
+      translateY: [0, 100],
+      opacity: 0,
+      easing: "easeInOutQuad",
+      autoplay: onScroll({
+        target: "#hero",
+        container: document.body,
+        enter: "top top",
+        leave: "top bottom-=33%",
+        sync: 0.25,
+      }),
+    });
   });
 </script>
 
-<div id="hero"></div>
+<div id="bg" class="absolute top-0 left-0 w-full h-[200vh]"></div>
 
-<div class="flex flex-col items-center justify-center h-screen relative">
+<div
+  class="flex flex-col items-center justify-center h-screen w-screen fixed"
+  id="hero"
+>
   <div class="absolute w-full h-full top-0 left-0 pointer-events-none z-[-1]">
+    <!--
     <img
       src="/assets/flowers/flower-1.png"
       alt="Flower 1"
@@ -62,11 +124,24 @@
       alt="Flower 3"
       class="absolute -top-48 -right-12 w-1/5 opacity-35 rotate-200"
     />
+    -->
+
+    <img
+      src="/assets/flowers/flower-2.png"
+      alt="Flower 2"
+      class="absolute bottom-24 -right-96 w-1/2 rotate-y-180 -rotate-20 opacity-35 right-core"
+    />
+
+    <img
+      src="/assets/flowers/flower-2.png"
+      alt="Flower 2"
+      class="absolute top-24 -left-96 w-1/2 rotate-20 opacity-35 left-core"
+    />
 
     <img
       src="/assets/logo.png"
       alt="Logo"
-      class="absolute top-1/2 left-1/2 w-1/4 opacity-35 -translate-x-1/2 -translate-y-1/2"
+      class="absolute top-1/2 left-1/2 w-1/4 opacity-35 -translate-x-1/2 -translate-y-1/2 absolute-core"
     />
   </div>
 
@@ -105,46 +180,37 @@
   <div class="flex core">
     <a
       href="/register"
-      class="px-6 py-3 bg-dark-blue hover:bg-cobalt-blue text-white rounded-lg text-lg font-semibold transition-colors duration-300 shadow-black/40 shadow-2xl"
+      class="px-6 py-3 bg-dark-blue hover:bg-cobalt-blue text-custom-white! rounded-lg text-lg font-semibold transition-colors duration-300 shadow-black/40 shadow-2xl"
     >
       Register Now!
     </a>
 
     <a
       href="/commitees"
-      class="ml-4 px-6 py-3 bg-custom-white hover:bg-dark-white text-black rounded-lg text-lg font-semibold transition-colors duration-300 shadow-black/40 shadow-2xl"
+      class="ml-4 px-6 py-3 bg-custom-white hover:bg-dark-white text-black! rounded-lg text-lg font-semibold transition-colors duration-300 shadow-black/40 shadow-2xl"
     >
       Explore Committees
     </a>
   </div>
 </div>
 
-<div class="h-screen"></div>
+<div class="h-screen relative top-[100vh]"></div>
 
 <style>
-  #hero {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-
-  #hero::before {
+  #bg::before {
     content: "";
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    right: 0;
 
     background: url("/assets/lines.png") repeat;
     background-size: 400px 400px;
     background-position: 0 0;
-    background-attachment: fixed;
+    background-attachment: scroll;
 
     opacity: 0.15;
-    z-index: -2;
+    z-index: -1;
   }
 </style>

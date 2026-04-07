@@ -7,7 +7,7 @@
 
 @font-face {
   font-family: 'Gotham Medium';
-  src: url('/assets/fonts/gotham_medium.ttf') format('truetype');
+  src: url('/assets/fonts/gotham_medium.otf') format('opentype');
 }
 
 @theme {
@@ -17,7 +17,11 @@
   --color-dark-blue: #1c3271;
   --color-cobalt-blue: #004aad;
 
-  --color-light-cobalt-blue: color-mix(in srgb, var(--color-cobalt-blue) 10%, var(--color-white));
+  --color-light-cobalt-blue: color-mix(in srgb, var(--color-cobalt-blue) 70%, var(--color-white));
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -31,4 +35,24 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'TAN Aegean', serif;
   font-weight: bold;
   color: var(--color-dark-blue);
+}
+
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection {
+  color: var(--color-custom-white);
+  background-color: var(--color-dark-blue);
+}
+
+a {
+  color: var(--color-cobalt-blue);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-light-cobalt-blue);
+  text-decoration: underline;
 }
