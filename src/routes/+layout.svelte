@@ -63,7 +63,7 @@
   <link rel="icon" href="/assets/logo.png" />
 </svelte:head>
 
-<div class="h-screen w-screen fixed top-0 left-0 z-10">
+<div class="h-screen w-screen fixed top-0 left-0 z-10 pointer-events-none">
   <div
     class="w-3 h-[35vh] top-[32vh] right-0 absolute backdrop-blur-sm rounded-l-xl shadow-left-glow"
   ></div>
