@@ -6,7 +6,40 @@
 
   const MUN_DATE = new Date("2026-07-31T08:00:00Z").getTime();
 
+  const probability = 0.5;
+  const damping = 0.5;
+  const opacity = 25;
+
   onMount(async () => {
+    const canvas = document.createElement("canvas");
+    const size = 400;
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext("2d");
+
+    const imageData = ctx?.createImageData(size, size)!;
+    const data = imageData?.data ?? [];
+
+    for (let i = 0; i < data.length; i += 4) {
+      const shade_range = Math.random();
+      const shade =
+        (shade_range <= probability ? 255 : 0) * Math.random() * damping;
+
+      data[i] = shade;
+      data[i + 1] = shade;
+      data[i + 2] = shade;
+      data[i + 3] = opacity;
+    }
+
+    ctx?.putImageData(imageData, 0, 0);
+    let letter = document.getElementsByClassName("letter");
+    for (let i = 0; i < letter.length; i++) {
+      (letter[i] as HTMLDivElement).style.backgroundImage =
+        `url(${canvas.toDataURL()})`;
+    }
+
+    window.scrollTo(0, 0);
+
     timeLeft = Math.max(0, MUN_DATE - Date.now());
 
     setInterval(() => {
@@ -14,6 +47,12 @@
     }, 1000);
 
     await animate(".core", {
+      opacity: 0,
+      translateY: 50,
+      duration: 0,
+    });
+
+    await animate(".core-2", {
       opacity: 0,
       translateY: 50,
       duration: 0,
@@ -59,6 +98,37 @@
         container: document.body,
         enter: "top top",
         leave: "top bottom-=33%",
+        sync: 0.25,
+      }),
+    });
+
+    animate(".letter", {
+      translateY: [50, 0],
+      scale: [1.5, 1.0],
+      opacity: [0, 1],
+      duration: 500,
+      easing: "easeOutExpo",
+      delay: stagger(500),
+      autoplay: onScroll({
+        target: "#screen-2",
+        container: document.body,
+        enter: "top top-=50%",
+        leave: "top top-=25%",
+        sync: 0.25,
+      }),
+    });
+
+    animate(".core-2", {
+      opacity: [0, 1],
+      translateY: [50, 0],
+      duration: 500,
+      easing: "easeOutExpo",
+      delay: stagger(100),
+      autoplay: onScroll({
+        target: "#screen-2",
+        container: document.body,
+        enter: "top top-=50%",
+        leave: "top top-=25%",
         sync: 0.25,
       }),
     });
@@ -147,30 +217,30 @@
 
   <h1 class="text-[10rem] core" id="heading">DWMUN'26</h1>
 
-  <div class="grid grid-cols-4 gap-2 w-[33%] mb-8 core">
+  <div class="grid grid-cols-4 gap-2 w-[50%] mb-8 core">
     <div class="flex flex-col items-center">
-      <h2 class="text-5xl">
+      <h2 class="text-7xl">
         {Math.floor(timeLeft / (1000 * 60 * 60 * 24))}
       </h2>
       <span class="uppercase font-bold">Days</span>
     </div>
 
     <div class="flex flex-col items-center">
-      <h2 class="text-5xl">
+      <h2 class="text-7xl">
         {Math.floor((timeLeft / (1000 * 60 * 60)) % 24)}
       </h2>
       <span class="uppercase font-bold">Hours</span>
     </div>
 
     <div class="flex flex-col items-center">
-      <h2 class="text-5xl">
+      <h2 class="text-7xl">
         {Math.floor((timeLeft / (1000 * 60)) % 60)}
       </h2>
       <span class="uppercase font-bold">Minutes</span>
     </div>
 
     <div class="flex flex-col items-center">
-      <h2 class="text-5xl">
+      <h2 class="text-7xl">
         {Math.floor((timeLeft / 1000) % 60)}
       </h2>
       <span class="uppercase font-bold">Seconds</span>
@@ -194,7 +264,66 @@
   </div>
 </div>
 
-<div class="h-screen relative top-[100vh]"></div>
+<div class="h-screen w-2/3 mx-auto relative top-[100vh] p-8" id="screen-2">
+  <div
+    class="bg-custom-white p-8 core-2 shadow-2xl letter w-full h-[75vh] absolute"
+  ></div>
+  <div
+    class="bg-custom-white p-8 core-2 shadow-2xl -rotate-5 letter w-full h-[75vh] absolute"
+  ></div>
+
+  <div
+    class="bg-custom-white p-8 core-2 shadow-2xl rotate-5 letter w-full absolute"
+    id="sec-letter"
+  >
+    <div class="flex flex-col mb-8">
+      <div class="flex items-center justify-center gap-2 mb-8">
+        <img src="/assets/logo.png" alt="Logo" class="w-36" />
+        <div class="flex flex-col items-start uppercase">
+          <span>Delhi Public School, Whitefield</span>
+          <span>Model United Nations</span>
+        </div>
+      </div>
+      <!--
+      <span class="text-center uppercase font-bold text-sm text-black/40">
+        Delhi Public School, Whitefield
+      </span>
+      -->
+    </div>
+    <div class="w-full text-right mb-8">8 April 2026</div>
+    <h1 class="text-3xl font-bold core-2">Letter from the Secretary-General</h1>
+    <hr class="mb-8 core-2" />
+    <p class="core-2">Greetings delegates!</p>
+    <br />
+    <p class="core-2">
+      It is with great pride and enthusiasm that the Organising Committee
+      extends a warm invitation to you to attend DWMUN’25, hosted by Delhi
+      Public School, Whitefield. Scheduled to take place on 31st July and 1st
+      and 2nd of August, this prestigious conference promises to be a platform
+      for young minds to engage in meaningful dialogue, critical
+      problem-solving, and diplomacy. DWMUN’25 brings together delegates from
+      across schools to simulate international diplomacy, as they represent
+      various nations and address pressing global issues, just as diplomats do
+      on real-world stages.
+    </p>
+
+    <br />
+    <p class="core-2">
+      This year, DWMUN will focus on promoting global cooperation,
+      peacebuilding, and innovative solutions across various committees.
+      Participants will not only gain a deeper understanding of international
+      relations, conflict resolution, and policy-making but also develop
+      leadership, oratory, and negotiation skills in a collaborative
+      environment. We would be honored by your presence at the event in
+      celebrating the spirit of diplomacy and youth engagement at DWMUN’25.
+    </p>
+    <br />
+    <p class="core-2">
+      Warm regards,<br /> Chirantana Hegde <br /> Secretary General <br />
+      DWMUN’25 <br /> Delhi Public School, Whitefield
+    </p>
+  </div>
+</div>
 
 <style>
   #bg::before {
@@ -210,7 +339,7 @@
     background-position: 0 0;
     background-attachment: scroll;
 
-    opacity: 0.15;
+    opacity: 0.25;
     z-index: -1;
   }
 </style>
