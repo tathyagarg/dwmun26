@@ -18,10 +18,14 @@
   --color-cobalt-blue: #004aad;
 
   --color-light-cobalt-blue: color-mix(in srgb, var(--color-cobalt-blue) 70%, var(--color-white));
+
+  --shadow-left-glow: 0 0 10px black;
 }
 
 html {
   scroll-behavior: smooth;
+
+  scrollbar-width: none;
 }
 
 body {
@@ -29,9 +33,6 @@ body {
   color: black;
 
   font-family: 'Gotham Medium', sans-serif;
-
-  scrollbar-color: red white;
-  scrollbar-width: thin;
 }
 
 hr {
