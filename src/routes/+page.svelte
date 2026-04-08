@@ -169,7 +169,7 @@
       autoplay: onScroll({
         target: "#sec-letter",
         container: document.body,
-        enter: "top top-=10%",
+        enter: "top top",
         leave: "top top+=10%",
         sync: 0.25,
       }),
