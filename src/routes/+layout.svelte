@@ -1,6 +1,5 @@
 <script lang="ts">
   import "./layout.css";
-  import favicon from "$lib/assets/favicon.svg";
   import { onMount } from "svelte";
   import Navbar from "$lib/components/Navbar.svelte";
 
@@ -37,7 +36,7 @@
 </script>
 
 <svelte:head>
-  <link rel="icon" href={favicon} />
+  <link rel="icon" href="/assets/logo.png" />
 </svelte:head>
 
 <Navbar />
