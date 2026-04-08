@@ -9,7 +9,12 @@
   const probability = 0.5;
   const damping = 0.75;
 
+  let safariNotifClosed: boolean = $state(true);
+
   onMount(() => {
+    safariNotifClosed =
+      localStorage.getItem("dwmun__safariNotifClosed") === "true";
+
     const canvas = document.createElement("canvas");
     const size = 400;
     canvas.width = size;
@@ -60,8 +65,34 @@
 </script>
 
 <svelte:head>
+  <title>DWMUN'26</title>
   <link rel="icon" href="/assets/logo.png" />
 </svelte:head>
+
+{#if !safariNotifClosed && navigator.userAgent.includes("Safari") && !navigator.userAgent.includes("Chrome")}
+  <div
+    class="fixed top-0 left-0 w-full h-full z-20 flex items-center justify-center backdrop-blur-sm"
+  >
+    <div
+      class="w-[25%] p-6 bg-white rounded-lg shadow-2xl text-center border-1 border-dark-blue"
+    >
+      <p class="text-left">
+        It looks like you're using Safari. For the best experience, we recommend
+        using a different browser like Chrome or Firefox (Safari is known to be
+        unbearably slow with complex pages like this one).
+      </p>
+      <button
+        class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+        onclick={() => {
+          localStorage.setItem("dwmun__safariNotifClosed", "true");
+          safariNotifClosed = true;
+        }}
+      >
+        I understand and wish to proceed
+      </button>
+    </div>
+  </div>
+{/if}
 
 <div class="h-screen w-screen fixed top-0 left-0 z-10 pointer-events-none">
   <div
