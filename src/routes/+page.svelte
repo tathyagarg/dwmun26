@@ -116,20 +116,19 @@
       }),
     });
 
-    animate(".letter", {
-      translateY: [50, 0],
-      scale: [1.25, 1.0],
-      opacity: [0, 1],
-      duration: 500,
-      ease: "easeOutExpo",
-      delay: stagger(500),
-      autoplay: onScroll({
-        target: "#screen-2",
-        container: document.body,
-        enter: "top top-=50%",
-        leave: "top top-=25%",
-        sync: 0.25,
-      }),
+    document.querySelectorAll(".letter").forEach((el, i) => {
+      animate(el, {
+        translateY: [100, 0],
+        scale: [1.25, 1.0],
+        opacity: [0, 1],
+        autoplay: onScroll({
+          target: "#screen-2",
+          container: document.body,
+          enter: `top top-=${60 - i * 20}%`,
+          leave: `top top-=${35 - i * 20}%`,
+          sync: 1,
+        }),
+      });
     });
 
     animate(".core-2", {
@@ -141,8 +140,8 @@
       autoplay: onScroll({
         target: "#screen-2",
         container: document.body,
-        enter: "top top-=50%",
-        leave: "top top-=25%",
+        enter: "top top-=20%",
+        leave: "top top+=5%",
         sync: 0.25,
       }),
     });
@@ -342,18 +341,18 @@
 
 <div class="h-screen w-2/3 mx-auto relative top-[100vh] p-8" id="screen-2">
   <div
-    class="bg-custom-white p-8 core-2 shadow-2xl letter w-full h-[100vh] absolute"
+    class="bg-custom-white p-8 2 shadow-2xl letter w-full h-[100vh] absolute"
   >
     <span class="absolute bottom-12 right-12">3</span>
   </div>
   <div
-    class="bg-custom-white p-8 core-2 shadow-2xl -rotate-5 letter w-full h-[100vh] absolute"
+    class="bg-custom-white p-8 shadow-2xl -rotate-5 letter w-full h-[100vh] absolute"
   >
     <span class="absolute bottom-12 right-12">2</span>
   </div>
 
   <div
-    class="bg-custom-white p-16 core-2 shadow-2xl rotate-5 letter w-full absolute"
+    class="bg-custom-white p-16 shadow-2xl rotate-5 letter w-full absolute"
     id="sec-letter"
   >
     <div class="flex flex-col mb-8">
