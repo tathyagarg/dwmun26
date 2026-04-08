@@ -141,7 +141,7 @@
         target: "#screen-2",
         container: document.body,
         enter: "top top-=20%",
-        leave: "top top+=5%",
+        leave: "top top-=5%",
         sync: 0.25,
       }),
     });
@@ -182,8 +182,8 @@
       autoplay: onScroll({
         target: "#sec-letter",
         container: document.body,
-        enter: "top top",
-        leave: "top top+=10%",
+        enter: "top top-=5%",
+        leave: "top top",
         sync: 0.25,
       }),
     });
