@@ -229,10 +229,10 @@
     />
   </div>
 
-  <h1 class="text-[10rem] core" id="heading">DWMUN'26</h1>
+  <h1 class="text-[10rem] core leading-[1.2]" id="heading">DWMUN'26</h1>
 
   <div class="grid grid-cols-4 gap-2 w-[50%] mb-8 core">
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-start">
       <h2 class="text-7xl">
         {Math.floor(timeLeft / (1000 * 60 * 60 * 24))}
       </h2>
@@ -253,12 +253,21 @@
       <span class="uppercase font-bold">Minutes</span>
     </div>
 
-    <div class="flex flex-col items-center">
+    <div class="flex flex-col items-end">
       <h2 class="text-7xl">
         {Math.floor((timeLeft / 1000) % 60)}
       </h2>
       <span class="uppercase font-bold">Seconds</span>
     </div>
+  </div>
+
+  <div class="w-[50%] flex items-center justify-between core mb-8 text-2xl">
+    <span class="text-shadow-white text-shadow-sm"
+      >July 31 - August 1, 2026</span
+    >
+    <span class="text-shadow-white text-shadow-sm"
+      >Bigger. Better. Brighter.</span
+    >
   </div>
 
   <div class="flex core">
@@ -281,10 +290,14 @@
 <div class="h-screen w-2/3 mx-auto relative top-[100vh] p-8" id="screen-2">
   <div
     class="bg-custom-white p-8 core-2 shadow-2xl letter w-full h-[100vh] absolute"
-  ></div>
+  >
+    <span class="absolute bottom-12 right-12">3</span>
+  </div>
   <div
     class="bg-custom-white p-8 core-2 shadow-2xl -rotate-5 letter w-full h-[100vh] absolute"
-  ></div>
+  >
+    <span class="absolute bottom-12 right-12">2</span>
+  </div>
 
   <div
     class="bg-custom-white p-16 core-2 shadow-2xl rotate-5 letter w-full absolute"
@@ -615,8 +628,10 @@
         stroke="black"
         fill="none"
         stroke-linecap="round"
-      ></path></svg
-    >
+      ></path>
+    </svg>
+
+    <span class="absolute bottom-12 right-12">1</span>
   </div>
 </div>
 
