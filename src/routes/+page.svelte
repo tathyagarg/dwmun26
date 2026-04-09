@@ -733,7 +733,7 @@
       >
         <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
         <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
+        <CommCard src="/assets/logos/CCC.png" name="CCC" />
         <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
         <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
         <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
@@ -745,7 +745,7 @@
       >
         <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
         <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
+        <CommCard src="/assets/logos/CCC.png" name="CCC" />
         <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
         <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
         <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
