@@ -20,6 +20,9 @@
   --color-light-cobalt-blue: color-mix(in srgb, var(--color-cobalt-blue) 70%, var(--color-white));
 
   --shadow-left-glow: 0 0 10px black;
+  --shadow-center-glow: 0 0 50px rgba(0, 0, 0, 0.75);
+
+  --font-heading: 'TAN Aegean', serif;
 }
 
 html {
@@ -40,7 +43,7 @@ hr {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'TAN Aegean', serif;
+  font-family: var(--font-heading);
   font-weight: bold;
   color: var(--color-dark-blue);
 }
@@ -63,4 +66,21 @@ a {
 a:hover {
   color: var(--color-light-cobalt-blue);
   text-decoration: underline;
+}
+
+#bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
+  background: url("/assets/lines.png") repeat;
+  background-size: 400px 400px;
+  background-position: 0 0;
+  background-attachment: scroll;
+
+  opacity: 0.25;
+  z-index: -1;
 }

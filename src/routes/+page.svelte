@@ -1,6 +1,7 @@
 <script lang="ts">
-  import CommCard from "$lib/components/CommCard.svelte";
+  import CommRow from "$lib/components/CommRow.svelte";
   import Footer from "$lib/components/Footer.svelte";
+  import Marquee from "$lib/components/Marquee.svelte";
   import { animate, onScroll, stagger, svg } from "animejs";
   import { onMount } from "svelte";
 
@@ -692,88 +693,13 @@
   </div>
 </div>
 
-<div class="h-screen relative top-[100vh]" id="screen-3">
+<div class="h-screen relative overflow-x-hidden top-[100vh]" id="screen-3">
   <h1 class="text-6xl text-center absolute top-32 w-full">Committees</h1>
-  <div
-    class="w-full flex items-center justify-center relative top-1/2 -translate-y-1/2"
-  >
-    <div
-      class="absolute -left-[5%] w-[125%] rotate-5 bg-dark-white p-4 shadow-2xl flex overflow-hidden select-none gap-8 marquee"
-    >
-      <div
-        class="shrink-0 flex items-center justify-around gap-8 min-w-full marquee-content"
-      >
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-      </div>
-
-      <div
-        class="shrink-0 flex items-center justify-around gap-8 min-w-full marquee-content"
-      >
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-      </div>
-    </div>
-
-    <div
-      class="absolute -right-[5%] w-[125%] -rotate-5 bg-dark-white p-4 shadow-2xl flex overflow-hidden select-none gap-8 opp-marquee"
-    >
-      <div
-        class="shrink-0 flex items-center justify-around gap-8 min-w-full opp-marquee-content"
-      >
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/CCC.png" name="CCC" />
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-      </div>
-
-      <div
-        class="shrink-0 flex items-center justify-around gap-8 min-w-full opp-marquee-content"
-      >
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/CCC.png" name="CCC" />
-        <CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-        <CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-      </div>
-    </div>
-  </div>
+  <Marquee>
+    <CommRow />
+  </Marquee>
 </div>
 
 <div class="relative top-[100vh]">
   <Footer />
 </div>
-
-<style>
-  #bg::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-
-    background: url("/assets/lines.png") repeat;
-    background-size: 400px 400px;
-    background-position: 0 0;
-    background-attachment: scroll;
-
-    opacity: 0.25;
-    z-index: -1;
-  }
-</style>
