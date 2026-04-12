@@ -21,7 +21,7 @@
       <a href="tel:+911234567890" class="text-blue-500 hover:underline"
         >+91 12345 67890</a
       ><br />
-      Head of Delegate Affairs: Nivika -
+      Head of Delegate Affairs: Nivika Kumar -
       <a href="tel:+911234567890" class="text-blue-500 hover:underline"
         >+91 12345 67890</a
       >

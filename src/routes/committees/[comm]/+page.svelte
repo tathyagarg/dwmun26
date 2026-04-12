@@ -1,7 +1,7 @@
 <script lang="ts">
   import Card from "$lib/components/Card.svelte";
   import Marquee from "$lib/components/Marquee.svelte";
-  import { animate, spring, stagger } from "animejs";
+  import { animate, onScroll, spring, stagger } from "animejs";
   import { onMount } from "svelte";
 
   let { data } = $props();
@@ -23,6 +23,16 @@
         duration: 0,
       },
     );
+
+    animate(".marquee", {
+      translateX: "100%",
+      duration: 0,
+    });
+
+    animate(".opp-marquee", {
+      translateX: "-100%",
+      duration: 0,
+    });
 
     animate(".left-core", {
       rotateY: 180,
@@ -63,6 +73,30 @@
       translateY: [-25, 0],
       duration: 1000,
       ease: "inSine",
+    });
+
+    animate(".marquee", {
+      translateX: ["100%", "0"],
+      ease: "outExpo",
+      autoplay: onScroll({
+        target: "#screen-2",
+        container: document.body,
+        enter: "top top-=40%",
+        leave: "top top",
+        sync: 0.25,
+      }),
+    });
+
+    animate(".opp-marquee", {
+      translateX: ["-100%", "0"],
+      ease: "outExpo",
+      autoplay: onScroll({
+        target: "#screen-2",
+        container: document.body,
+        enter: "top top-=40%",
+        leave: "top top",
+        sync: 0.25,
+      }),
     });
 
     await animate("#comm-logo", {
@@ -109,7 +143,9 @@
   });
 </script>
 
-<div class="w-full h-screen fixed top-0 left-0 -z-10 overflow-y-hidden">
+<div
+  class="w-full h-screen absolute top-0 left-0 -z-10 pointer-events-none overflow-x-hidden overflow-y-visible"
+>
   <img
     src="/assets/flowers/flower-1.png"
     alt="Flower 1"
@@ -135,9 +171,12 @@
   />
 </div>
 
-<div id="bg" class="absolute top-0 left-0 w-full h-[200vh]"></div>
+<div
+  id="bg"
+  class="absolute top-0 left-0 w-full h-[200vh] pointer-events-none"
+></div>
 
-<div class="h-[80vh] my-[10vh] w-full grid grid-cols-3">
+<div class="h-[80vh] my-[10vh] w-full grid grid-cols-3" id="screen-1">
   <div class="flex flex-col items-center justify-center px-4 gap-4" id="left">
     {#if commData.backgroundGuideUrl}
       <a
@@ -184,7 +223,7 @@
     {commData.matrix.filter((pf) => !pf.filled).length} / {commData.matrix
       .length} Portfolios Vacant
     <div
-      class="w-full max-h-[80vh] overflow-y-scroll rounded-lg backdrop-blur-sm overflow-hidden border-2 border-dark-blue"
+      class="w-full max-h-[80vh] overflow-y-scroll rounded-lg backdrop-blur-sm overflow-x-hidden border-2 border-dark-blue"
     >
       {#each commData.matrix as portfolio}
         <div
@@ -206,8 +245,20 @@
   </div>
 </div>
 
-<div class="w-full h-screen overflow-x-hidden py-16 px-4">
-  <h1 class="text-8xl text-shadow-sm">The Executive Board</h1>
+<div class="w-full h-screen overflow-hidden py-16 px-4 relative" id="screen-2">
+  <img
+    src="/assets/logos/{commData.name.toUpperCase()}.png"
+    alt="Background"
+    class=" h-full object-cover absolute top-0 right-0 translate-x-1/2 opacity-50"
+  />
+
+  <img
+    src="/assets/flowers/flower-2.png"
+    alt="Flower 2"
+    class="absolute bottom-0 -left-1/2 translate-x-1/2 w-1/2 rotate-y-180 opacity-35"
+  />
+
+  <h1 class="text-8xl text-shadow-sm text-center">The Executive Board</h1>
   <hr />
   <Marquee marquee={false}>
     {#each commData.eb as ebMember}
