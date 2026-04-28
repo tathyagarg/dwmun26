@@ -44,7 +44,7 @@
       left: true,
     },
     {
-      name: "Sloka",
+      name: "Sloka Pudipeddi",
       role: "Co-Head of Delegate Affairs",
       don: false,
     },
@@ -54,9 +54,18 @@
       right: true,
     },
     {
+      name: "Simone",
+      role: "Head of Social Media",
+      left: true,
+    },
+    {
       name: "Ruth Shetty",
       role: "Head of Design",
-      left: true,
+    },
+    {
+      name: "Vivek Tejas",
+      role: "Head of Tech",
+      right: true,
     },
   ];
 </script>

@@ -234,7 +234,7 @@
       {commData.matrix.filter((pf) => !pf.filled).length} / {commData.matrix
         .length} Portfolios Vacant
     {:else}
-      <span class="font-bold"> No portfolio information available yet. </span>
+      <span class="font-bold"> No matrix available yet. </span>
     {/if}
 
     <div

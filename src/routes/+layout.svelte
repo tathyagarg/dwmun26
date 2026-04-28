@@ -100,7 +100,7 @@
   ></div>
 
   <div
-    class="w-1 h-[10vh] top-[33vh] absolute right-1 rounded-full bg-dark-blue"
+    class="w-1 h-[10vh] top-[33vh] absolute right-1 rounded-full bg-dark-blue border-1 border-custom-white/50"
     id="scrollbar"
   ></div>
 </div>

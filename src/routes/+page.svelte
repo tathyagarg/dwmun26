@@ -230,7 +230,7 @@
   });
 </script>
 
-<div id="bg" class="absolute top-0 left-0 w-full h-[300vh]"></div>
+<div id="bg" class="absolute top-0 left-0 w-full h-[325vh]"></div>
 
 <div
   class="flex flex-col items-center justify-center h-screen w-screen fixed"
@@ -358,13 +358,13 @@
   >
     <div class="flex flex-col mb-8">
       <div class="flex items-center justify-center gap-4 mb-8">
-        <div class="flex flex-col items-end uppercase text-sm">
+        <div class="flex flex-col items-end uppercase text-xs text-right">
           <span>Delhi Public School, Whitefield</span>
           <span>Model United Nations</span>
         </div>
         <img src="/assets/un-logo.png" alt="Logo" class="w-36" />
         <img src="/assets/logo.png" alt="Logo" class="w-36" />
-        <div class="flex flex-col items-start uppercase text-sm">
+        <div class="flex flex-col items-start uppercase text-xs text-left">
           <span>Delhi Public School, Whitefield</span>
           <span>Model United Nations</span>
         </div>
@@ -375,37 +375,63 @@
       </span>
       -->
     </div>
-    <div class="w-full text-right mb-8">8 April 2026</div>
+    <div class="w-full text-right mb-8">28 April 2026</div>
     <h1 class="text-3xl font-bold core-2">Letter from the Secretary-General</h1>
     <hr class="mb-8 core-2" />
-    <p class="core-2">Greetings delegates!</p>
+    <p class="text-sm core-2">Dear delegates,</p>
     <br />
-    <p class="core-2">
-      It is with great pride and enthusiasm that the Organising Committee
-      extends a warm invitation to you to attend DWMUN’25, hosted by Delhi
-      Public School, Whitefield. Scheduled to take place on 31st July and 1st
-      and 2nd of August, this prestigious conference promises to be a platform
-      for young minds to engage in meaningful dialogue, critical
-      problem-solving, and diplomacy. DWMUN’25 brings together delegates from
-      across schools to simulate international diplomacy, as they represent
-      various nations and address pressing global issues, just as diplomats do
-      on real-world stages.
+    <p class="text-justify text-sm core-2">
+      It is a pleasure of mine to open the doors to the 8th edition of Delhi
+      Public School Whitefield Model United Nations, DWMUN’26. As the Secretary
+      General of this conference, I look forward to meeting each one of you.
     </p>
 
     <br />
-    <p class="core-2">
-      This year, DWMUN will focus on promoting global cooperation,
-      peacebuilding, and innovative solutions across various committees.
-      Participants will not only gain a deeper understanding of international
-      relations, conflict resolution, and policy-making but also develop
-      leadership, oratory, and negotiation skills in a collaborative
-      environment. We would be honored by your presence at the event in
-      celebrating the spirit of diplomacy and youth engagement at DWMUN’25.
+    <p class="text=justify text-sm core-2">
+      From budding delegates to experienced pros, I sincerely wish that DWMUN’26
+      will be an enthralling competition and a neutral ground for you to hone
+      your skills. The purpose of hosting this MUN is to provide students with
+      opportunities to learn, compete, and grow their confidence to speak out in
+      the real world.
+    </p>
+
+    <br />
+    <p class="text-justify text-sm core-2">
+      Looking back to my first MUN, it was very anti-cinematic. There was no
+      dramatic music in the background as I walked in; instead, there was only a
+      confused 8th grader looking up as seniors furiously debated policy with
+      each other. As an ambitious kid, I chose ECOSOC as my first committee. I
+      may have spoken once in the entirety of 3 days, but I walked out in love
+      with MUNs. In those 3 days, I learned simply by sitting and listening to
+      people. That is the power of a MUN. In a competition of public speaking,
+      it turns out that listening is the most important part.
+    </p>
+
+    <br />
+    <p class="text-justify text-sm core-2">
+      Looking back at my past MUNs, I wasn’t all that impressive. During the
+      MUNs, I was nervous and running on pure adrenaline up until the closing
+      ceremony. Winning awards gave me no gratification at all; in fact, the
+      best MUNs for me were not the ones I won, but the ones I lost miserably.
+      It reminded me that there was so much more to learn, and even after a
+      loss, I was proud of the research, speeches, and content I put out. At the
+      end of the day, in the true nature of competition, winning and losing are
+      just part of the game.
     </p>
     <br />
-    <p class="core-2">
-      Warm regards,<br /> Chirantana Hegde <br /> Secretary General <br />
-      DWMUN’25 <br /> Delhi Public School, Whitefield
+    <p class="text-justify text-sm core-2">
+      So, I implore all of you to give your very best, and regardless of the
+      outcome, I hope you take away an important lesson from this MUN and are
+      proud of the work and efforts you put in. Wishing you all the very best
+      for this conference, and looking forward to seeing what all of you have to
+      bring to the table.
+    </p>
+
+    <br />
+
+    <p class="text-sm core-2">
+      Warm regards,<br /> Saachi Pathak <br /> Secretary General <br />
+      DWMUN’26 <br /> Delhi Public School, Whitefield
     </p>
 
     <svg
@@ -693,13 +719,13 @@
   </div>
 </div>
 
-<div class="h-screen relative overflow-x-hidden top-[100vh]" id="screen-3">
+<div class="h-screen relative overflow-x-hidden top-[125vh]" id="screen-3">
   <h1 class="text-6xl text-center absolute top-32 w-full">Committees</h1>
   <Marquee>
     <CommRow />
   </Marquee>
 </div>
 
-<div class="relative top-[100vh]">
+<div class="relative top-[125vh]">
   <Footer />
 </div>

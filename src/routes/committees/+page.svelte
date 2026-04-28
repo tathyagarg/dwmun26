@@ -28,7 +28,7 @@
         opacity: [0, 1],
         duration: 750,
         delay: 200 + i * 100,
-        easing: "easeInOutSine",
+        ease: "outCirc",
       });
     }
   });
