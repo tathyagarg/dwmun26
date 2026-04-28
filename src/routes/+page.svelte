@@ -332,7 +332,7 @@
     </a>
 
     <a
-      href="/commitees"
+      href="/committees"
       class="flex-1 flex items-center justify-center text-center ml-4 px-6 py-3 bg-custom-white hover:bg-dark-white text-black! rounded-lg text-lg font-semibold transition-colors duration-300 shadow-black/40 shadow-2xl"
     >
       Explore Committees

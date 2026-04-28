@@ -1,11 +1,9 @@
 <script>
+  import { COMM_DATA } from "$lib";
   import CommCard from "./Card.svelte";
 </script>
 
-<CommCard src="/assets/logos/HRC.png" name="UNHRC" />
-<CommCard src="/assets/logos/UNSC.png" name="UNSC" />
-<CommCard src="/assets/logos/CCC.png" name="CCC" />
-<CommCard src="/assets/logos/IPC.png" name="IPC" />
-<CommCard src="/assets/logos/DISEC.png" name="DISEC" />
-<CommCard src="/assets/logos/AIPPM.png" name="AIPPM" />
-<CommCard src="/assets/logos/AIPPM.png" name="AIPPM" />
+{#each Object.entries(COMM_DATA) as [comm, _]}
+  {@const commName = comm.toUpperCase()}
+  <CommCard src="/assets/logos/{commName}.png" name={commName} />
+{/each}
