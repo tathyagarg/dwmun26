@@ -6,7 +6,7 @@
   import { onMount } from "svelte";
 
   let { data } = $props();
-  let { commData } = data;
+  let { commData } = $derived(data);
 
   onMount(async () => {
     animate(".marquee", {

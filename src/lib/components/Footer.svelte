@@ -17,11 +17,11 @@
   <div class="flex flex-row items-center mt-4">
     <Icon icon="mdi:phone" class="text-4xl mr-2" />
     <span class="text-lg leading-[1.2]">
-      Secretary General: Saachi Pathak -
+      <span class="font-bold">Secretary General</span>: Saachi Pathak -
       <a href="tel:+911234567890" class="text-blue-500 hover:underline"
         >+91 12345 67890</a
       ><br />
-      Head of Delegate Affairs: Nivika Kumar -
+      <span class="font-bold">Head of Delegate Affairs</span>: Nivika Kumar -
       <a href="tel:+911234567890" class="text-blue-500 hover:underline"
         >+91 12345 67890</a
       >

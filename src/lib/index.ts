@@ -1,4 +1,23 @@
-export const COMM_DATA = {
+type Committee = {
+  name: string;
+  description: string;
+  agenda: string;
+  backgroundGuideUrl: string | null;
+  matrix: {
+    portfolio: string;
+    filled: boolean;
+  }[];
+  eb: {
+    name: string;
+    position: string;
+    image: string;
+  }[];
+}
+
+export const COMM_DATA: Record<
+  'disec' | 'unhrc' | 'aippm' | 'ipc' | 'unsc' | 'icrc' | 'ccc',
+  Committee
+> = {
   disec: {
     name: 'DISEC',
     description: '',
