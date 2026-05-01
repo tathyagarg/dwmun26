@@ -35,11 +35,6 @@
       duration: 0,
     });
 
-    animate("#comm-logo", {
-      scale: 2,
-      duration: 0,
-    });
-
     animate(".left-core", {
       translateX: [25, 0],
       opacity: 0.35,
@@ -110,7 +105,7 @@
     });
 
     await animate("#comm-logo", {
-      scale: [2, 2, 1],
+      scale: [1.5, 1.5, 1],
       duration: 1000,
       ease: "inExpo",
     });
@@ -177,11 +172,14 @@
 
 <div
   id="bg"
-  class="absolute top-0 left-0 w-full h-[200vh] pointer-events-none"
+  class="absolute top-0 left-0 w-full h-[300vh] sm:h-[200vh] pointer-events-none"
 ></div>
 
-<div class="h-[80vh] my-[10vh] w-full grid grid-cols-3" id="screen-1">
-  <div id="left">
+<div
+  class="h-full sm:h-[80vh] my-[10vh] w-full grid grid-rows-3 sm:grid-cols-3"
+  id="screen-1"
+>
+  <div id="left" class="order-2 sm:order-1 sm:h-[80vh]">
     <div
       id="about-comm"
       class="flex flex-col items-center justify-center px-4 gap-4 h-full"
@@ -213,8 +211,12 @@
       {/if}
     </div>
   </div>
-  <div class="flex flex-col items-center justify-center px-4">
-    <h1 class="uppercase text-8xl" id="comm-name">{commData.name}</h1>
+  <div
+    class="sm:h-[80vh] full flex flex-col items-center justify-center px-4 order-1 sm:order-2"
+  >
+    <h1 class="uppercase text-4xl sm:text-8xl" id="comm-name">
+      {commData.name}
+    </h1>
     <img
       src="/assets/logos/{commData.name.toUpperCase()}.png"
       alt={commData.name}
@@ -229,7 +231,7 @@
       </p>
     </div>
   </div>
-  <div class="px-4" id="right">
+  <div class="px-4 order-3 sm:h-[80vh]" id="right">
     {#if commData.matrix.length !== 0}
       {commData.matrix.filter((pf) => !pf.filled).length} / {commData.matrix
         .length} Portfolios Vacant
@@ -264,7 +266,7 @@
   <img
     src="/assets/logos/{commData.name.toUpperCase()}.png"
     alt="Background"
-    class="h-full object-cover absolute top-0 right-0 translate-x-1/2 opacity-50"
+    class="h-full object-cover absolute top-0 right-0 translate-x-1/2 opacity-50 overflow-visible"
     id="ebLogo"
   />
 
@@ -274,7 +276,9 @@
     class="absolute bottom-0 -left-1/2 translate-x-1/2 w-1/2 rotate-y-180 opacity-35"
   />
 
-  <h1 class="text-8xl text-shadow-sm text-center">The Executive Board</h1>
+  <h1 class="text-4xl sm:text-8xl text-shadow-sm text-center">
+    The Executive Board
+  </h1>
   <hr />
   {#if commData.eb.length === 0}
     <p class="text-center mt-4 text-lg">

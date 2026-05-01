@@ -2,7 +2,7 @@
   import Icon from "@iconify/svelte";
 </script>
 
-<footer class="bg-custom-white w-full px-4 sm:px-1/6 py-12">
+<footer class="bg-custom-white w-full px-4 sm:px-[16.6%] py-12">
   <h1 class="text-2xl mb-4">Contact Us</h1>
 
   <div class="flex flex-row items-center">

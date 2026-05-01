@@ -34,7 +34,7 @@
   });
 </script>
 
-<div id="bg" class="absolute top-0 left-0 w-full h-[120vh]"></div>
+<div id="bg" class="absolute top-0 left-0 w-full h-[175vh] sm:h-[120vh]"></div>
 <div
   class="w-full h-screen absolute top-24 left-0 -z-10 pointer-events-none overflow-x-hidden"
 >
@@ -45,7 +45,7 @@
   />
 </div>
 
-<div class="h-screen w-full relative top-24">
+<div class="h-screen w-full relative top-24 hidden sm:block">
   <div class="relative top-48" id="marq-1">
     <Marquee marquee={false} back={false}>
       {#each Object.entries(COMM_DATA).slice(0, 4) as [comm, _]}
@@ -76,6 +76,24 @@
         <Card src="/assets/logos/{commName}.png" name={commName} small hovers />
       {/each}
     </Marquee>
+  </div>
+</div>
+
+<div class="min-h-screen w-full relative top-24 pb-8 block sm:hidden">
+  <div class="w-full">
+    <h1 id="comm-head" class="text-4xl/[1.5] text-center py-12">Committees</h1>
+  </div>
+
+  <div class="w-full grid grid-cols-2 gap-4 px-4">
+    {#each Object.entries(COMM_DATA) as [comm, _]}
+      {@const commName = comm.toUpperCase()}
+      <button
+        class="cursor-pointer"
+        onclick={() => (window.location.href = `/committees/${comm}`)}
+      >
+        <Card src="/assets/logos/{commName}.png" name={commName} small hovers />
+      </button>
+    {/each}
   </div>
 </div>
 
