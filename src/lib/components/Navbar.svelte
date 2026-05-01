@@ -1,5 +1,5 @@
 <div
-  class="w-full fixed top-0 p-4 z-50 flex gap-6 text-lg bg-black/10 backdrop-blur-sm"
+  class="w-full fixed top-0 p-4 z-50 flex gap-6 text-xs sm:text-lg backdrop-blur-sm"
 >
   <a href="/">DWMUN</a>
   <a href="/committees">Committees</a>

@@ -34,7 +34,18 @@
   });
 </script>
 
-<div class="h-screen w-full relative">
+<div id="bg" class="absolute top-0 left-0 w-full h-[120vh]"></div>
+<div
+  class="w-full h-screen absolute top-24 left-0 -z-10 pointer-events-none overflow-x-hidden"
+>
+  <img
+    src="/assets/flowers/flower-1.png"
+    alt="Flower 1"
+    class="absolute -bottom-24 -right-12 w-1/3 rotate-y-180 opacity-35 right-core bottom-core"
+  />
+</div>
+
+<div class="h-screen w-full relative top-24">
   <div class="relative top-48" id="marq-1">
     <Marquee marquee={false} back={false}>
       {#each Object.entries(COMM_DATA).slice(0, 4) as [comm, _]}
@@ -46,7 +57,8 @@
           <Card
             src="/assets/logos/{commName}.png"
             name={commName}
-            small={true}
+            small
+            hovers
           />
         </button>
       {/each}
@@ -61,19 +73,12 @@
     <Marquee marquee={false} back={false} flip={true}>
       {#each Object.entries(COMM_DATA).slice(4, 8) as [comm, _]}
         {@const commName = comm.toUpperCase()}
-        <button
-          class="cursor-pointer"
-          onclick={() => (window.location.href = `/committees/${comm}`)}
-        >
-          <Card
-            src="/assets/logos/{commName}.png"
-            name={commName}
-            small={true}
-          />
-        </button>
+        <Card src="/assets/logos/{commName}.png" name={commName} small hovers />
       {/each}
     </Marquee>
   </div>
 </div>
 
-<Footer />
+<div class="relative top-24">
+  <Footer />
+</div>

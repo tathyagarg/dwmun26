@@ -125,8 +125,8 @@
         autoplay: onScroll({
           target: "#screen-2",
           container: document.body,
-          enter: `top top-=${60 - i * 20}%`,
-          leave: `top top-=${35 - i * 20}%`,
+          enter: `top top-=${70 - i * 20}%`,
+          leave: `top top-=${50 - i * 20}%`,
           sync: 1,
         }),
       });
@@ -278,69 +278,76 @@
     <img
       src="/assets/logo.png"
       alt="Logo"
-      class="absolute top-1/2 left-1/2 w-1/4 opacity-35 -translate-x-1/2 -translate-y-1/2 absolute-core"
+      class="absolute top-1/2 left-1/2 w-2/3 sm:w-1/4 opacity-35 -translate-x-1/2 -translate-y-1/2 absolute-core"
     />
   </div>
 
-  <h1 class="text-[10rem] core leading-[1.2]" id="heading">DWMUN'26</h1>
+  <h1 class="text-5xl sm:text-[10rem] core leading-[1.2]" id="heading">
+    DWMUN'26
+  </h1>
 
-  <div class="grid grid-cols-4 gap-2 w-[50%] mb-8 core">
+  <div class="grid grid-cols-4 gap-2 w-2/3 sm:w-1/2 mb-8 core">
     <div class="flex flex-col items-start">
-      <h2 class="text-7xl">
+      <h2 class="text-3xl sm:text-7xl">
         {Math.floor(timeLeft / (1000 * 60 * 60 * 24))}
       </h2>
-      <span class="uppercase font-bold">Days</span>
+      <span class="uppercase font-bold text-xs sm:text-base">Days</span>
     </div>
 
     <div class="flex flex-col items-center">
-      <h2 class="text-7xl">
+      <h2 class="text-3xl sm:text-7xl">
         {Math.floor((timeLeft / (1000 * 60 * 60)) % 24)}
       </h2>
-      <span class="uppercase font-bold">Hours</span>
+      <span class="uppercase font-bold text-xs sm:text-base">Hours</span>
     </div>
 
     <div class="flex flex-col items-center">
-      <h2 class="text-7xl">
+      <h2 class="text-3xl sm:text-7xl">
         {Math.floor((timeLeft / (1000 * 60)) % 60)}
       </h2>
-      <span class="uppercase font-bold">Minutes</span>
+      <span class="uppercase font-bold text-xs sm:text-base">Minutes</span>
     </div>
 
     <div class="flex flex-col items-end">
-      <h2 class="text-7xl">
+      <h2 class="text-3xl sm:text-7xl">
         {Math.floor((timeLeft / 1000) % 60)}
       </h2>
-      <span class="uppercase font-bold">Seconds</span>
+      <span class="uppercase font-bold text-xs sm:text-base">Seconds</span>
     </div>
   </div>
 
-  <div class="w-[50%] flex items-center justify-between core mb-8 text-2xl">
+  <div
+    class="w-2/3 sm:w-1/2 flex items-center justify-between core mb-8 sm:text-2xl"
+  >
     <span class="text-shadow-white text-shadow-sm"
       >July 31 - August 1, 2026</span
     >
-    <span class="text-shadow-white text-shadow-sm"
+    <span class="text-shadow-white text-shadow-sm text-right"
       >Bigger. Better. Brighter.</span
     >
   </div>
 
-  <div class="flex core">
+  <div class="flex core w-2/3 sm:w-fit text-sm sm:text-lg">
     <a
       href="/register"
-      class="flex-1 flex items-center justify-center px-6 py-3 bg-dark-blue hover:bg-cobalt-blue text-custom-white! rounded-lg text-lg font-semibold transition-colors duration-300 shadow-black/40 shadow-2xl"
+      class="flex-1 flex items-center justify-center px-6 py-3 bg-dark-blue hover:bg-cobalt-blue text-custom-white! rounded-lg font-semibold transition-colors duration-300 shadow-black/40 shadow-2xl"
     >
       Register Now!
     </a>
 
     <a
       href="/committees"
-      class="flex-1 flex items-center justify-center text-center ml-4 px-6 py-3 bg-custom-white hover:bg-dark-white text-black! rounded-lg text-lg font-semibold transition-colors duration-300 shadow-black/40 shadow-2xl"
+      class="flex-1 flex items-center justify-center text-center ml-4 px-6 py-3 bg-custom-white hover:bg-dark-white text-black! rounded-lg font-semibold transition-colors duration-300 shadow-black/40 shadow-2xl"
     >
       Explore Committees
     </a>
   </div>
 </div>
 
-<div class="h-screen w-2/3 mx-auto relative top-[100vh] p-8" id="screen-2">
+<div
+  class="h-screen w-full sm:w-2/3 mx-auto relative top-[75vh] sm:top-[100vh] sm:p-8"
+  id="screen-2"
+>
   <div
     class="bg-custom-white p-8 2 shadow-2xl letter w-full h-[100vh] absolute"
   >
@@ -353,18 +360,22 @@
   </div>
 
   <div
-    class="bg-custom-white p-16 shadow-2xl rotate-5 letter w-full absolute"
+    class="bg-custom-white p-2 sm:p-16 shadow-2xl sm:rotate-5 letter w-full absolute"
     id="sec-letter"
   >
     <div class="flex flex-col mb-8">
       <div class="flex items-center justify-center gap-4 mb-8">
-        <div class="flex flex-col items-end uppercase text-xs text-right">
+        <div
+          class="flex flex-col items-end uppercase text-[0.5rem] sm:text-xs text-right"
+        >
           <span>Delhi Public School, Whitefield</span>
           <span>Model United Nations</span>
         </div>
-        <img src="/assets/un-logo.png" alt="Logo" class="w-36" />
-        <img src="/assets/logo.png" alt="Logo" class="w-36" />
-        <div class="flex flex-col items-start uppercase text-xs text-left">
+        <img src="/assets/un-logo.png" alt="Logo" class="w-1/2 sm:w-36" />
+        <img src="/assets/logo.png" alt="Logo" class="w-1/2 sm:w-36" />
+        <div
+          class="flex flex-col items-start uppercase text-[0.5rem] sm:text-xs text-left"
+        >
           <span>Delhi Public School, Whitefield</span>
           <span>Model United Nations</span>
         </div>
@@ -378,67 +389,71 @@
     <div class="w-full text-right mb-8">28 April 2026</div>
     <h1 class="text-3xl font-bold core-2">Letter from the Secretary-General</h1>
     <hr class="mb-8 core-2" />
-    <p class="text-sm core-2">Dear delegates,</p>
-    <br />
-    <p class="text-justify text-sm core-2">
-      It is a pleasure of mine to open the doors to the 8th edition of Delhi
-      Public School Whitefield Model United Nations, DWMUN’26. As the Secretary
-      General of this conference, I look forward to meeting each one of you.
-    </p>
+    <div class="text-xs sm:text-sm">
+      <p class="core-2">Dear delegates,</p>
+      <br />
+      <p class="text-justify core-2">
+        It is a pleasure of mine to open the doors to the 8th edition of Delhi
+        Public School Whitefield Model United Nations, DWMUN’26. As the
+        Secretary General of this conference, I look forward to meeting each one
+        of you.
+      </p>
 
-    <br />
-    <p class="text=justify text-sm core-2">
-      From budding delegates to experienced pros, I sincerely wish that DWMUN’26
-      will be an enthralling competition and a neutral ground for you to hone
-      your skills. The purpose of hosting this MUN is to provide students with
-      opportunities to learn, compete, and grow their confidence to speak out in
-      the real world.
-    </p>
+      <br />
+      <p class="text=justify core-2">
+        From budding delegates to experienced pros, I sincerely wish that
+        DWMUN’26 will be an enthralling competition and a neutral ground for you
+        to hone your skills. The purpose of hosting this MUN is to provide
+        students with opportunities to learn, compete, and grow their confidence
+        to speak out in the real world.
+      </p>
 
-    <br />
-    <p class="text-justify text-sm core-2">
-      Looking back to my first MUN, it was very anti-cinematic. There was no
-      dramatic music in the background as I walked in; instead, there was only a
-      confused 8th grader looking up as seniors furiously debated policy with
-      each other. As an ambitious kid, I chose ECOSOC as my first committee. I
-      may have spoken once in the entirety of 3 days, but I walked out in love
-      with MUNs. In those 3 days, I learned simply by sitting and listening to
-      people. That is the power of a MUN. In a competition of public speaking,
-      it turns out that listening is the most important part.
-    </p>
+      <br />
+      <p class="text-justify core-2">
+        Looking back to my first MUN, it was very anti-cinematic. There was no
+        dramatic music in the background as I walked in; instead, there was only
+        a confused 8th grader looking up as seniors furiously debated policy
+        with each other. As an ambitious kid, I chose ECOSOC as my first
+        committee. I may have spoken once in the entirety of 3 days, but I
+        walked out in love with MUNs. In those 3 days, I learned simply by
+        sitting and listening to people. That is the power of a MUN. In a
+        competition of public speaking, it turns out that listening is the most
+        important part.
+      </p>
 
-    <br />
-    <p class="text-justify text-sm core-2">
-      Looking back at my past MUNs, I wasn’t all that impressive. During the
-      MUNs, I was nervous and running on pure adrenaline up until the closing
-      ceremony. Winning awards gave me no gratification at all; in fact, the
-      best MUNs for me were not the ones I won, but the ones I lost miserably.
-      It reminded me that there was so much more to learn, and even after a
-      loss, I was proud of the research, speeches, and content I put out. At the
-      end of the day, in the true nature of competition, winning and losing are
-      just part of the game.
-    </p>
-    <br />
-    <p class="text-justify text-sm core-2">
-      So, I implore all of you to give your very best, and regardless of the
-      outcome, I hope you take away an important lesson from this MUN and are
-      proud of the work and efforts you put in. Wishing you all the very best
-      for this conference, and looking forward to seeing what all of you have to
-      bring to the table.
-    </p>
+      <br />
+      <p class="text-justify core-2">
+        Looking back at my past MUNs, I wasn’t all that impressive. During the
+        MUNs, I was nervous and running on pure adrenaline up until the closing
+        ceremony. Winning awards gave me no gratification at all; in fact, the
+        best MUNs for me were not the ones I won, but the ones I lost miserably.
+        It reminded me that there was so much more to learn, and even after a
+        loss, I was proud of the research, speeches, and content I put out. At
+        the end of the day, in the true nature of competition, winning and
+        losing are just part of the game.
+      </p>
+      <br />
+      <p class="text-justify core-2">
+        So, I implore all of you to give your very best, and regardless of the
+        outcome, I hope you take away an important lesson from this MUN and are
+        proud of the work and efforts you put in. Wishing you all the very best
+        for this conference, and looking forward to seeing what all of you have
+        to bring to the table.
+      </p>
 
-    <br />
+      <br />
 
-    <p class="text-sm core-2">
-      Warm regards,<br /> Saachi Pathak <br /> Secretary General <br />
-      DWMUN’26 <br /> Delhi Public School, Whitefield
-    </p>
+      <p class="core-2">
+        Warm regards,<br /> Saachi Pathak <br /> Secretary General <br />
+        DWMUN’26 <br /> Delhi Public School, Whitefield
+      </p>
+    </div>
 
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlns:xlink="http://www.w3.org/1999/xlink"
       viewBox="53.5 20.17414093017578 331.9523010253906 147.17324829101562"
-      height="200"
+      class="h-[100px] sm:h-[200px]"
       ><path
         class="line"
         d="M 279.000,38.367 C 277.125,35.583 276.750,36.117 274.500,33.867"
@@ -720,7 +735,9 @@
 </div>
 
 <div class="h-screen relative overflow-x-hidden top-[125vh]" id="screen-3">
-  <h1 class="text-6xl text-center absolute top-32 w-full">Committees</h1>
+  <h1 class="text-4xl sm:text-6xl text-center absolute top-32 w-full">
+    Committees
+  </h1>
   <Marquee>
     <CommRow />
   </Marquee>

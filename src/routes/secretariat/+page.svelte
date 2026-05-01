@@ -53,14 +53,16 @@
       role: "Head of Logistics",
       right: true,
     },
-    {
-      name: "Simone",
-      role: "Head of Social Media",
-      left: true,
-    },
+    // {
+    //   name: "Simone Ghosh",
+    //   role: "Head of Social Media",
+    //   left: true,
+    // },
     {
       name: "Ruth Shetty",
       role: "Head of Design",
+      left: true,
+      start: 2,
     },
     {
       name: "Vivek Tejas",
@@ -76,11 +78,11 @@
   <div class="w-2/3 grid grid-cols-6 gap-4">
     {#each sec as s}
       <div
-        class="bg-custom-white p-4 shadow-2xl shadow-black/40 rounded"
+        class="bg-custom-white p-4 shadow-2xl shadow-black/40 rounded border-1 border-dark-blue"
         class:col-span-3={s.don}
         class:col-span-2={!s.don}
-        class:rounded-l-xl!={s.left}
-        class:rounded-r-xl!={s.right}
+        class:rounded-l-2xl!={s.left}
+        class:rounded-r-2xl!={s.right}
         class:col-start-2={s.start === 2}
       >
         <img

@@ -27,7 +27,8 @@
     </div>
   {/if}
   <div
-    class="absolute -left-[5%] w-[110%] bg-dark-blue p-4 shadow-center-glow flex overflow-hidden select-none gap-8 marquee"
+    class="absolute -left-[5%] w-[110%] p-4 shadow-center-glow flex overflow-hidden select-none gap-8 marquee"
+    style="background: linear-gradient(90deg, #142040 10%, var(--color-dark-blue) 50%, #142040 95%)"
     class:rotate-5={!flip}
     class:-rotate-5={flip}
   >

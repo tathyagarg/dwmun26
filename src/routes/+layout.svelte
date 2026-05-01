@@ -106,4 +106,5 @@
 </div>
 
 <Navbar />
+
 {@render children()}

@@ -2,12 +2,12 @@
   import Icon from "@iconify/svelte";
 </script>
 
-<footer class="bg-custom-white w-full px-[16.6%] py-12">
+<footer class="bg-custom-white w-full px-4 sm:px-1/6 py-12">
   <h1 class="text-2xl mb-4">Contact Us</h1>
 
   <div class="flex flex-row items-center">
     <Icon icon="mdi:map-marker" class="text-4xl mr-2" />
-    <span class="text-lg leading-[1.2]">
+    <span class="text-base sm:text-lg leading-[1.2]">
       Delhi Public School - Whitefield<br />
       Survey No. 123/124, Mallasandra Village<br />
       Hostoke Taluk, Bangalore - 560067
@@ -16,7 +16,7 @@
 
   <div class="flex flex-row items-center mt-4">
     <Icon icon="mdi:phone" class="text-4xl mr-2" />
-    <span class="text-lg leading-[1.2]">
+    <span class="text-base sm:text-lg leading-[1.2]">
       <span class="font-bold">Secretary General</span>: Saachi Pathak -
       <a href="tel:+919663426152" class="text-blue-500 hover:underline"
         >+91 96634 26152</a

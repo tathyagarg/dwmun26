@@ -1,8 +1,13 @@
 <script lang="ts">
-  let { src, name, subtext = null, small = false } = $props();
+  let { src, name, subtext = null, small = false, hovers = false } = $props();
 </script>
 
-<div class="min-h-full bg-custom-white border-2 border-dark-blue p-8">
+<div
+  class="min-h-full bg-custom-white border-2 border-dark-blue p-8 shadow-white/20 transition-all duration-300"
+  class:hover:shadow-lg={hovers}
+  class:hover:scale-110={hovers}
+  class:hover:rounded-2xl={hovers}
+>
   <img
     {src}
     alt={name}
