@@ -53,16 +53,14 @@
       role: "Head of Logistics",
       right: true,
     },
-    // {
-    //   name: "Simone Ghosh",
-    //   role: "Head of Social Media",
-    //   left: true,
-    // },
     {
       name: "Ruth Shetty",
       role: "Head of Design",
       left: true,
-      start: 2,
+    },
+    {
+      name: "Simone Ghosh",
+      role: "Head of Social Media",
     },
     {
       name: "Vivek Tejas",
