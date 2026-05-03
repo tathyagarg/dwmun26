@@ -41,10 +41,14 @@
   <div class="flex flex-row items-center mt-4">
     <Icon icon="mdi:email" class="text-4xl mr-2" />
     <a
-      href="mailto:dpsw.modelun@gmail.com"
+      href="mailto:help@dwmun.co.in"
       class="text-lg text-blue-500 hover:underline"
     >
-      dpsw.modelun@gmail.com
+      help@dwmun.co.in
     </a>
   </div>
+
+  <span class="text-xs opacity-75 mt-8 block"
+    >Made by <a href="https://arson.dev/">Tathya</a></span
+  >
 </footer>
