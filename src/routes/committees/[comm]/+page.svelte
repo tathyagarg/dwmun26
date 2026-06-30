@@ -226,7 +226,7 @@
 
     <div id="agenda">
       <p class="uppercase text-center text-xl mt-8 mb-4">Agenda:</p>
-      <p class="text-justify text-xl">
+      <p class="text-center text-xl">
         {commData.agenda || "To be decided."}
       </p>
     </div>
@@ -291,6 +291,7 @@
           name={ebMember.name}
           src={ebMember.image}
           subtext={ebMember.position}
+          soft
         />
       {/each}
     </Marquee>

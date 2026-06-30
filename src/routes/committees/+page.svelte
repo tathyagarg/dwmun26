@@ -10,14 +10,14 @@
     animate("#marq-1", {
       translateX: ["-100%", "0%"],
       opacity: [0, 1],
-      duration: 1000,
+      duration: 500,
       easing: "easeInOutSine",
     });
 
     animate("#marq-2", {
       translateX: ["100%", "0%"],
       opacity: [0, 1],
-      duration: 1000,
+      duration: 500,
       easing: "easeInOutSine",
     });
 
@@ -73,7 +73,17 @@
     <Marquee marquee={false} back={false} flip={true}>
       {#each Object.entries(COMM_DATA).slice(4, 8) as [comm, _]}
         {@const commName = comm.toUpperCase()}
-        <Card src="/assets/logos/{commName}.png" name={commName} small hovers />
+        <button
+          class="cursor-pointer"
+          onclick={() => (window.location.href = `/committees/${comm}`)}
+        >
+          <Card
+            src="/assets/logos/{commName}.png"
+            name={commName}
+            small
+            hovers
+          />
+        </button>
       {/each}
     </Marquee>
   </div>
