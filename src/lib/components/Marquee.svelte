@@ -1,5 +1,11 @@
 <script lang="ts">
-  let { children, marquee = true, back = true, flip = false } = $props();
+  let {
+    children,
+    marquee = true,
+    back = true,
+    flip = false,
+    backblur = false,
+  } = $props();
 </script>
 
 <div
@@ -8,6 +14,7 @@
   {#if back}
     <div
       class="absolute -right-[5%] w-[110%] bg-dark-blue/25 backdrop-blur-sm p-4 shadow-center-glow flex overflow-hidden select-none gap-8 opp-marquee"
+      class:blur-xs={backblur}
       class:-rotate-5={!flip}
       class:rotate-5={flip}
     >

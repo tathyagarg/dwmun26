@@ -6,11 +6,13 @@
     small = false,
     hovers = false,
     soft = false,
+    mini = false,
   } = $props();
 </script>
 
 <div
-  class="min-h-full bg-custom-white border-2 border-dark-blue p-8 shadow-white/20 transition-all duration-300"
+  class="min-h-full bg-custom-white border-2 border-dark-blue p-6 shadow-white/20 transition-all duration-300 max-w-72"
+  class:p-8={!mini}
   class:hover:shadow-lg={hovers}
   class:hover:scale-110={hovers}
   class:hover:rounded-2xl={hovers}
@@ -34,7 +36,7 @@
       class:w-48={small}
     />
   {/if}
-  <h1 class="max-w-[12ch] text-2xl text-center">{name}</h1>
+  <h1 class="text-xl text-center">{name}</h1>
   {#if subtext}
     <p class="text-center text-lg mt-2">{subtext}</p>
   {/if}

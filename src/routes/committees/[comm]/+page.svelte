@@ -262,7 +262,7 @@
   </div>
 </div>
 
-<div class="w-full h-screen overflow-hidden py-16 px-4 relative" id="screen-2">
+<div class="w-full h-[95vh] overflow-hidden py-16 px-4 relative" id="screen-2">
   <img
     src="/assets/logos/{commData.name.toUpperCase()}.png"
     alt="Background"
@@ -285,13 +285,14 @@
       No information about the executive board is available yet.
     </p>
   {:else}
-    <Marquee marquee={false}>
+    <Marquee marquee={false} backblur>
       {#each commData.eb as ebMember}
         <Card
           name={ebMember.name}
           src={ebMember.image}
           subtext={ebMember.position}
           soft
+          mini
         />
       {/each}
     </Marquee>
