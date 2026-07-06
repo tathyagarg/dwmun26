@@ -250,6 +250,7 @@ export const COMM_DATA: Record<
     ],
     eb: [
       { name: 'Shanmukha Siva Mythreya', position: 'International Head of Press', image: '/assets/eb/ipc/shanmukha.jpeg' },
+      { name: 'Kapishnu P.K.', position: 'Assistant Head of Press', image: '/assets/eb/ipc/kapishnu.jpeg' },
     ],
   },
 
