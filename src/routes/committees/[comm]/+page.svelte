@@ -172,7 +172,7 @@
 
 <div
   id="bg"
-  class="absolute top-0 left-0 w-full h-[300vh] sm:h-[200vh] pointer-events-none"
+  class="absolute top-0 left-0 w-full h-[400vh] sm:h-[200vh] pointer-events-none"
 ></div>
 
 <div
@@ -262,7 +262,10 @@
   </div>
 </div>
 
-<div class="w-full h-[95vh] overflow-hidden py-16 px-4 relative" id="screen-2">
+<div
+  class="w-full h-[95vh] overflow-hidden py-16 px-4 relative hidden sm:block"
+  id="screen-2"
+>
   <img
     src="/assets/logos/{commData.name.toUpperCase()}.png"
     alt="Background"
@@ -296,6 +299,33 @@
         />
       {/each}
     </Marquee>
+  {/if}
+</div>
+
+<div
+  class="w-full min-h-[95vh] overflow-hidden py-16 px-4 relative block sm:hidden"
+  id="screen-2"
+>
+  <h1 class="text-4xl sm:text-8xl text-shadow-sm text-center">
+    The Executive Board
+  </h1>
+  <hr />
+  {#if commData.eb.length === 0}
+    <p class="text-center mt-4 text-lg">
+      No information about the executive board is available yet.
+    </p>
+  {:else}
+    <div class="grid grid-cols-2 gap-4 mt-4">
+      {#each commData.eb as ebMember}
+        <Card
+          name={ebMember.name}
+          src={ebMember.image}
+          subtext={ebMember.position}
+          soft
+          mini
+        />
+      {/each}
+    </div>
   {/if}
 </div>
 

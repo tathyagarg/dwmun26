@@ -738,7 +738,7 @@
   <h1 class="text-4xl sm:text-6xl text-center absolute top-32 w-full">
     Committees
   </h1>
-  <Marquee>
+  <Marquee marquee>
     <CommRow />
   </Marquee>
 </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
   let {
     children,
-    marquee = true,
+    marquee = false,
     back = true,
     flip = false,
     backblur = false,

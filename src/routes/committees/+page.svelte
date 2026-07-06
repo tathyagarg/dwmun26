@@ -47,7 +47,7 @@
 
 <div class="h-screen w-full relative top-24 hidden sm:block">
   <div class="relative top-48" id="marq-1">
-    <Marquee marquee={false} back={false}>
+    <Marquee back={false}>
       {#each Object.entries(COMM_DATA).slice(0, 4) as [comm, _]}
         {@const commName = comm.toUpperCase()}
         <button
@@ -70,7 +70,7 @@
   </div>
 
   <div class="relative bottom-48" id="marq-2">
-    <Marquee marquee={false} back={false} flip={true}>
+    <Marquee back={false} flip={true}>
       {#each Object.entries(COMM_DATA).slice(4, 8) as [comm, _]}
         {@const commName = comm.toUpperCase()}
         <button
