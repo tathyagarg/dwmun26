@@ -224,7 +224,7 @@ export const COMM_DATA: Record<
   ipc: {
     name: 'IPC',
     description: '',
-    agenda: 'No Agenda.',
+    agenda: 'No Agenda',
     backgroundGuideUrl: null,
     matrix: [
       { portfolio: "The Washington Post", filled: false },
