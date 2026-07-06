@@ -13,7 +13,7 @@
       <span class="text-base sm:text-lg leading-[1.2]">
         Delhi Public School - Whitefield<br />
         Survey No. 123/124, Mallasandra Village<br />
-        Hostoke Taluk, Bangalore - 560067
+        Hoskote Taluk, Bangalore - 560067
       </span>
     </div>
 
