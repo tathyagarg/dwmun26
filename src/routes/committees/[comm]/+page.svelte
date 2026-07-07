@@ -2,6 +2,7 @@
   import Card from "$lib/components/Card.svelte";
   import Footer from "$lib/components/Footer.svelte";
   import Marquee from "$lib/components/Marquee.svelte";
+  import Icon from "@iconify/svelte";
   import { animate, onScroll } from "animejs";
   import { onMount } from "svelte";
 
@@ -231,7 +232,20 @@
       </p>
     </div>
   </div>
-  <div class="px-4 order-3 sm:h-[80vh]" id="right">
+
+  <div class="px-4 order-3 sm:h-[80vh] my-[1vh]" id="right">
+    <div
+      class="h-[5vh] w-full text-center border-2 border-dark-blue rounded-lg backdrop-blur-sm flex items-center justify-center"
+    >
+      <a
+        href="https://docs.google.com/spreadsheets/d/1N2XmhyAgEyX9RPse00AUIsdXfe2RqmKpROBGMKylmNs/edit?usp=sharing"
+        class="flex items-center gap-2"
+      >
+        <Icon icon="akar-icons:link-out" />
+        Committee Matrix
+      </a>
+    </div>
+
     {#if commData.matrix.length !== 0}
       {commData.matrix.filter((pf) => !pf.filled).length} / {commData.matrix
         .length} Portfolios Vacant
@@ -240,7 +254,7 @@
     {/if}
 
     <div
-      class="w-full max-h-[80vh] overflow-y-scroll rounded-lg backdrop-blur-sm overflow-x-hidden border-2 border-dark-blue"
+      class="w-full max-h-[75vh] overflow-y-scroll rounded-lg backdrop-blur-sm overflow-x-hidden border-2 border-dark-blue"
     >
       {#each commData.matrix as portfolio}
         <div
