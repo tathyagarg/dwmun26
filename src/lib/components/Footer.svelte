@@ -74,6 +74,7 @@
   footer::before {
     content: "";
     position: absolute;
+    pointer-events: none;
 
     top: 0;
     left: 0;

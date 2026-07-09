@@ -743,6 +743,6 @@
   </Marquee>
 </div>
 
-<div class="relative top-[125vh]">
+<div class="relative top-[125vh] z-[100]">
   <Footer />
 </div>
