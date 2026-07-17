@@ -230,6 +230,12 @@
       <p class="text-center text-xl">
         {commData.agenda || "To be decided."}
       </p>
+
+      {#if commData.name === "UNSC"}
+        <p class="text-center mt-4 font-bold">
+          Note: The UNSC is no longer a double delegation committee.
+        </p>
+      {/if}
     </div>
   </div>
 
