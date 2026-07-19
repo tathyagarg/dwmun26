@@ -24,6 +24,11 @@
         <a href="tel:+919663426152" class="text-blue-500 hover:underline"
           >+91 96634 26152</a
         ><br />
+        <span class="font-bold">Head of Delegate Affairs</span>: Sloka Pudipeddi
+        -
+        <a href="tel:+916364601718" class="text-blue-500 hover:underline"
+          >+91 63646 01718</a
+        ><br />
         <span class="font-bold">Head of Delegate Affairs</span>: Nivika Kumar -
         <a href="tel:+919170087106" class="text-blue-500 hover:underline"
           >+91 91700 87106</a
