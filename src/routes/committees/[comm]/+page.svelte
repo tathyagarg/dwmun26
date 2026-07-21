@@ -244,7 +244,7 @@
       class="h-[5vh] w-full text-center border-2 border-dark-blue rounded-lg backdrop-blur-sm flex items-center justify-center"
     >
       <a
-        href="https://docs.google.com/spreadsheets/d/1N2XmhyAgEyX9RPse00AUIsdXfe2RqmKpROBGMKylmNs/edit?usp=sharing"
+        href="https://docs.google.com/spreadsheets/d/1b6-7flhZA_E6Ludpd4_d2ErZZnBSPONBCv_mf1pfjfE/edit?usp=sharing"
         class="flex items-center gap-2"
       >
         <Icon icon="akar-icons:link-out" />
