@@ -272,7 +272,7 @@
             {portfolio.portfolio}
           </p>
           {#if portfolio.filled}
-            <p>Filled</p>
+            <p>Allocated</p>
           {:else}
             <p>Vacant</p>
           {/if}
