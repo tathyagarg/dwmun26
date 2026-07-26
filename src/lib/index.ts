@@ -424,7 +424,7 @@ export const COMM_DATA: Record<
     name: 'CCC',
     description: '',
     agenda: 'Combating the Bombay Syndicate (Freeze Date - 12th March, 1993 (0800 hours))',
-    backgroundGuideUrl: null,
+    backgroundGuideUrl: "https://drive.google.com/drive/folders/1ml1SUkXW5IuyH_oi_0ixQNsjBhzRqu1B?usp=sharing",
     matrix: [
       { portfolio: "Dawood Ibrahim", filled: true },
       { portfolio: "Ibrahim “Tiger” Memon", filled: false },
